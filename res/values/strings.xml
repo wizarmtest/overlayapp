@@ -2,9 +2,9 @@
 <resources>
 
     <string name="app_name">overlayapp</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="dummy_content">Menu</string>
     <string name="xbmc_button">XBMC</string>
-    <string name="video_button">View video from Tuner care</string>
+    <string name="video_button">View Direct video streaming</string>
     <string name="scale_button">Dynamic scale Video</string>
 
 

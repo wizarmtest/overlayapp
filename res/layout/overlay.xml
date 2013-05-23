@@ -11,7 +11,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="#ffffff"
-    android:gravity="center_horizontal|top"
+    android:gravity="center"
     android:orientation="vertical"
     tools:context=".OverlayScreen" >
 
@@ -21,16 +21,28 @@
          TextureView, etc.
     -->
 
-    <TextView
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:id="@+id/fullscreen_content_controls"
+    style="?buttonBarStyle"
+    android:background="@color/black_overlay">
+
+	<TextView
         android:id="@+id/fullscreen_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
         android:keepScreenOn="true"
         android:text="@string/dummy_content"
         android:textColor="#33b5e5"
-       	android:textSize="50sp"
+       	android:textSize="13sp"
+       	android:paddingLeft="3dp"
+       	android:paddingBottom="2dp"
         android:textStyle="bold" />
+        
 
     <Button
         android:id="@+id/xbmc_button"
@@ -53,15 +65,7 @@
         android:layout_height="wrap_content"
         android:text="@string/scale_button" />
 
-    <LinearLayout
-        android:id="@+id/fullscreen_content_controls"
-        style="?buttonBarStyle"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="@color/black_overlay"
-        android:orientation="horizontal"
-        tools:ignore="UselessParent" >
     </LinearLayout>
-
+    
 </FrameLayout>
 </RelativeLayout>
