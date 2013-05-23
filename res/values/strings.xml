@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Interactive Overlay Sample</string>
+    <string name="app_name">overlayapp</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="dummy_button">Dummy Button</string>
 
-    <string name="title_notification">Sample Overlay View</string>
-    <string name="message_notification">Press To Hide Overlay</string>
-                       
+
+    <string name="title_notification">string title_notification</string>
+    <string name="message_notification">string message_notification</string>
+
 </resources>

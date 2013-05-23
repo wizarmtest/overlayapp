@@ -4,15 +4,49 @@
     android:layout_height="wrap_content"
     android:layout_margin="0dp"
     android:background="@drawable/overlay_back"
-    android:padding="12dp" >
+    android:padding="2dp" >
+    
+<FrameLayout 
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#0099cc"
+    android:gravity="center_horizontal|top"
+    tools:context=".OverlayScreen" >
+
+    <!--
+         The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc.
+    -->
 
     <TextView
-        android:id="@+id/textview_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal|top"
-        android:text="info"
-        android:textColor="#FFF"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:id="@+id/fullscreen_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:keepScreenOn="true"
+        android:text="@string/dummy_content"
+        android:textColor="#33b5e5"
+       	android:textSize="50sp"
+        android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/dummy_button"
+        style="?buttonBarButtonStyle"
+        android:layout_width="221dp"
+        android:layout_height="wrap_content"
+        android:text="@string/dummy_button" />
+
+    <LinearLayout
+        android:id="@+id/fullscreen_content_controls"
+        style="?buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/black_overlay"
+        android:orientation="horizontal"
+        tools:ignore="UselessParent" >
+    </LinearLayout>
+
+</FrameLayout>
 </RelativeLayout>

@@ -37,32 +37,32 @@ public class SampleOverlayView extends OverlayView {
 	
 	@Override
 	protected void onInflateView() {
-		info = (TextView) this.findViewById(R.id.textview_info);
+		info = (TextView) this.findViewById(R.id.fullscreen_content);
 	}
 
 	@Override
 	protected void refreshViews() {
-		info.setText("WAITING\nWAITING");
+//		info.setText("WAITING\nWAITING");
 	}
 
 	@Override
 	protected void onTouchEvent_Up(MotionEvent event) {
-		info.setText("UP\nPOINTERS: " + event.getPointerCount());
+//		info.setText("UP\nPOINTERS: " + event.getPointerCount());
 	}
 
 	@Override
 	protected void onTouchEvent_Move(MotionEvent event) {
-		info.setText("MOVE\nPOINTERS: " + event.getPointerCount());
+//		info.setText("MOVE\nPOINTERS: " + event.getPointerCount());
 	}
 
 	@Override
 	protected void onTouchEvent_Press(MotionEvent event) {
-		info.setText("DOWN\nPOINTERS: " + event.getPointerCount());
+//		info.setText("DOWN\nPOINTERS: " + event.getPointerCount());
 	}
 
 	@Override
 	public boolean onTouchEvent_LongPress() {
-		info.setText("LONG\nPRESS");
+//		info.setText("LONG\nPRESS");
 
 		return true;
 	}
