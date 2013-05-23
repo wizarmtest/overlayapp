@@ -3,7 +3,9 @@
 
     <string name="app_name">overlayapp</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="dummy_button">Dummy Button</string>
+    <string name="xbmc_button">XBMC</string>
+    <string name="video_button">View video from Tuner care</string>
+    <string name="scale_button">Dynamic scale Video</string>
 
 
     <string name="title_notification">string title_notification</string>

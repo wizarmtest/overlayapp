@@ -10,8 +10,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="#0099cc"
+    android:background="#ffffff"
     android:gravity="center_horizontal|top"
+    android:orientation="vertical"
     tools:context=".OverlayScreen" >
 
     <!--
@@ -32,11 +33,25 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/dummy_button"
+        android:id="@+id/xbmc_button"
         style="?buttonBarButtonStyle"
-        android:layout_width="221dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/dummy_button" />
+        android:text="@string/xbmc_button" />
+
+    <Button
+        android:id="@+id/video_button"
+        style="?buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/video_button" />
+
+    <Button
+        android:id="@+id/scale_button"
+        style="?buttonBarButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/scale_button" />
 
     <LinearLayout
         android:id="@+id/fullscreen_content_controls"
