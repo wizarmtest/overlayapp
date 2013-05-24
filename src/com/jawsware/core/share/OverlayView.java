@@ -16,6 +16,7 @@ package com.jawsware.core.share;
  limitations under the License.
  */
 
+import android.util.Log;
 import android.content.Context;
 import android.graphics.PixelFormat;
 import android.view.Gravity;
@@ -28,7 +29,7 @@ import android.widget.RelativeLayout;
 public abstract class OverlayView extends RelativeLayout {
 
 	protected WindowManager.LayoutParams layoutParams;
-
+	private final static String tag = OverlayView.class.getSimpleName();
 	private int layoutResId;
 	private int notificationId = 0;
 
@@ -62,9 +63,10 @@ public abstract class OverlayView extends RelativeLayout {
 	}
 
 	private void setupLayoutParams() {
+		Log.d(tag, "_FDK_ setupLayoutPArms");
 		layoutParams = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT,
 				WindowManager.LayoutParams.TYPE_PHONE, WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
-						| WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, PixelFormat.TRANSLUCENT);
+						| WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH, PixelFormat.TRANSLUCENT);
 
 		layoutParams.gravity = getLayoutGravity();
 
@@ -231,6 +233,7 @@ public abstract class OverlayView extends RelativeLayout {
 
 		view.getLocationOnScreen(location);
 
+		 Log.d(tag, "MEEEEEEEEEEEEEEEEEEEE ISINSIDE");
 		if (x >= location[0]) {
 			if (x <= location[0] + view.getWidth()) {
 				if (y >= location[1]) {
@@ -246,24 +249,29 @@ public abstract class OverlayView extends RelativeLayout {
 
 	protected void onTouchEvent_Up(MotionEvent event) {
 
+		 Log.d(tag, "MEEEEEEEEEEEEEEEEEEEE");
 	}
 
 	protected void onTouchEvent_Move(MotionEvent event) {
 
+		 Log.d(tag, "MEEEEEEEEEEEEEEEEEEEE");
 	}
 
 	protected void onTouchEvent_Press(MotionEvent event) {
 
+		 Log.d(tag, "MEEEEEEEEEEEEEEEEEEEE");
 	}
 	
 	public boolean onTouchEvent_LongPress()
-	{	
+	{
+	
+		 Log.d(tag, "MEEEEEEEEEEEEEEEEEEEE");
 		return false;
 	}
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
-
+		 Log.d(tag, "_FDK_ File2 onTouchEvent");
 		 if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
 
 			onTouchEvent_Press(event);
