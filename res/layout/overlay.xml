@@ -3,17 +3,11 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="0dp"
+    android:keepScreenOn="true"
     android:background="@drawable/overlay_back"
     android:padding="2dp" >
     
-<FrameLayout 
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="#ffffff"
-    android:gravity="center"
-    android:orientation="vertical"
-    tools:context=".OverlayScreen" >
+
 
     <!--
          The primary full-screen view. This can be replaced with whatever view
@@ -23,30 +17,29 @@
 
 
     <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:gravity="center"
+    android:background="#ffffff"
     android:orientation="vertical"
-    android:id="@+id/fullscreen_content_controls"
-    style="?buttonBarStyle"
-    android:background="@color/black_overlay">
+    android:id="@+id/fullscreen_content_controls">
 
 	<TextView
-        android:id="@+id/fullscreen_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:keepScreenOn="true"
-        android:text="@string/dummy_content"
-        android:textColor="#33b5e5"
-       	android:textSize="13sp"
-       	android:paddingLeft="3dp"
-       	android:paddingBottom="2dp"
-        android:textStyle="bold" />
+	    android:id="@+id/fullscreen_content"
+	    android:layout_width="match_parent"
+		android:layout_height="match_parent"
+	    android:keepScreenOn="true"
+	    android:paddingBottom="2dp"
+	    android:paddingLeft="3dp"
+	    android:text="@string/dummy_content"
+	    android:textColor="#33b5e5"
+	    android:textSize="13sp"
+	    android:textStyle="bold" />
         
-
     <Button
         android:id="@+id/xbmc_button"
         style="?buttonBarButtonStyle"
+		android:keepScreenOn="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/xbmc_button" />
@@ -54,6 +47,7 @@
     <Button
         android:id="@+id/video_button"
         style="?buttonBarButtonStyle"
+		android:keepScreenOn="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/video_button" />
@@ -61,11 +55,11 @@
     <Button
         android:id="@+id/scale_button"
         style="?buttonBarButtonStyle"
+	android:keepScreenOn="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/scale_button" />
 
     </LinearLayout>
-    
-</FrameLayout>
+
 </RelativeLayout>
