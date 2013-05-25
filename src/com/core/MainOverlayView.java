@@ -1,4 +1,4 @@
-package com.jawsware.core.share;
+package com.core;
 
 /*
  Copyright 2011 jawsware international
@@ -16,6 +16,8 @@ package com.jawsware.core.share;
  limitations under the License.
  */
 
+//import samples.jawsware.interactiveoverlay.R;
+import com.view.wizarm.R;
 import android.util.Log;
 import android.content.Context;
 import android.graphics.PixelFormat;
@@ -24,16 +26,18 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.AlphaAnimation;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-public abstract class OverlayView extends RelativeLayout {
+public abstract class MainOverlayView extends RelativeLayout {
 
 	protected WindowManager.LayoutParams layoutParams;
-	private final static String tag = OverlayView.class.getSimpleName();
+	private final static String tag = MainOverlayView.class.getSimpleName();
 	private int layoutResId;
 	private int notificationId = 0;
 
-	public OverlayView(OverlayService service, int layoutResId, int notificationId) {
+	public MainOverlayView(MainOverlayService service, int layoutResId, int notificationId) {
 		super(service);
 
 		this.layoutResId = layoutResId;
@@ -52,8 +56,8 @@ public abstract class OverlayView extends RelativeLayout {
 		load();
 	}
 
-	public OverlayService getService() {
-		return (OverlayService) getContext();
+	public MainOverlayService getService() {
+		return (MainOverlayService) getContext();
 	}
 
 	public int getLayoutGravity() {
@@ -64,12 +68,27 @@ public abstract class OverlayView extends RelativeLayout {
 
 	private void setupLayoutParams() {
 		Log.d(tag, "_FDK_ setupLayoutPArms");
+		LinearLayout rl = (LinearLayout) findViewById(R.id.fullscreen_content_controls);
+	//	LinearLayout r2 = (LinearLayout) findViewById(R.id.fullscreen_content_controls_menu_box);
+		
+		AlphaAnimation alpha = new AlphaAnimation (0.5F, 1.0F);
+		alpha.setDuration(0); // Make animation instant
+		alpha.setFillAfter(true);
+		
+		AlphaAnimation alpha2 = new AlphaAnimation (0.5F, 1.0F);
+		alpha2.setDuration(0); // Make animation instant
+		alpha2.setFillAfter(true);
+	//	r2.startAnimation(alpha2);
+
 		layoutParams = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT,
 				WindowManager.LayoutParams.TYPE_PHONE, WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
 						| WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH, PixelFormat.TRANSLUCENT);
 
 		layoutParams.gravity = getLayoutGravity();
-
+		
+		rl.startAnimation(alpha);
+		
+		
 		onSetupLayoutParams();
 
 	}

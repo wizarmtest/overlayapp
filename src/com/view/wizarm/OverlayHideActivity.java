@@ -1,4 +1,4 @@
-package samples.jawsware.interactiveoverlay;
+package com.view.wizarm;
 
 /*
 Copyright 2011 jawsware international
@@ -17,17 +17,16 @@ limitations under the License.
 */
 
 import android.app.Activity;
-
 import android.os.Bundle;
 
-public class SampleOverlayHideActivity extends Activity {
+public class OverlayHideActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
 		
-		SampleOverlayService.stop();
+		OverlayService.stop();
 			
 		finish();
 		

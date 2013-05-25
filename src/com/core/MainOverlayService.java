@@ -1,4 +1,4 @@
-package com.jawsware.core.share;
+package com.core;
 
 /*
 Copyright 2011 jawsware international
@@ -23,7 +23,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
-public class OverlayService extends Service {
+public class MainOverlayService extends Service {
 
 	protected boolean foreground = false;
 	protected boolean cancelNotification = false;

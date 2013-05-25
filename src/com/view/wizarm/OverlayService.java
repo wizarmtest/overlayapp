@@ -1,4 +1,4 @@
-package samples.jawsware.interactiveoverlay;
+package com.view.wizarm;
 
 /*
 Copyright 2011 jawsware international
@@ -16,18 +16,18 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import com.jawsware.core.share.OverlayService;
+import com.view.wizarm.R;
 
+import com.core.MainOverlayService;
 import android.app.Notification;
 import android.app.PendingIntent;
-
 import android.content.Intent;
 
-public class SampleOverlayService extends OverlayService {
+public class OverlayService extends MainOverlayService {
 
-	public static SampleOverlayService instance;
+	public static OverlayService instance;
 
-	private SampleOverlayView overlayView;
+	private OverlayView overlayView;
 
 	@Override
 	public void onCreate() {
@@ -35,7 +35,7 @@ public class SampleOverlayService extends OverlayService {
 		
 		instance = this;
 		
-		overlayView = new SampleOverlayView(this);
+		overlayView = new OverlayView(this);
 	}
 
 	@Override
@@ -69,7 +69,7 @@ public class SampleOverlayService extends OverlayService {
 
 
 	private PendingIntent notificationIntent() {
-		Intent intent = new Intent(this, SampleOverlayHideActivity.class);
+		Intent intent = new Intent(this, OverlayHideActivity.class);
 
 		PendingIntent pending = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 

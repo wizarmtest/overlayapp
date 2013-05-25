@@ -1,4 +1,4 @@
-package samples.jawsware.interactiveoverlay;
+package com.view.wizarm;
 
 /*
 Copyright 2011 jawsware international
@@ -15,6 +15,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
+import com.view.wizarm.R;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -24,16 +26,16 @@ import android.widget.Button;
 import android.view.View;
 
 
-import com.jawsware.core.share.OverlayService;
-import com.jawsware.core.share.OverlayView;
+import com.core.MainOverlayService;
+import com.core.MainOverlayView;
 
-public class SampleOverlayView extends OverlayView implements OnClickListener {
+public class OverlayView extends MainOverlayView implements OnClickListener {
 
 	Button xbmc_button,video_button;
 	private TextView info;
-	private final static String tag = OverlayView.class.getSimpleName();
+	private final static String tag = MainOverlayView.class.getSimpleName();
 	
-	public SampleOverlayView(OverlayService service) {
+	public OverlayView(MainOverlayService service) {
 		super(service, R.layout.overlay, 1);
 	}
 
@@ -47,16 +49,29 @@ public class SampleOverlayView extends OverlayView implements OnClickListener {
 		xbmc_button = (Button) findViewById(R.id.xbmc_button);
 		video_button = (Button) findViewById(R.id.video_button);
 		
+		info.setVisibility(View.VISIBLE);
 		xbmc_button.setVisibility(View.VISIBLE);
 		video_button.setVisibility(View.VISIBLE);
 
 		xbmc_button.setOnClickListener(this);
 		video_button.setOnClickListener(this);
+		
+		Drawable balpha = video_button.getBackground();
+		balpha.setAlpha(255);
+		video_button.setBackgroundDrawable(balpha);
+		
+		//Drawable talpha = info.getBackground();
+		//talpha.setAlpha(255);
+		//info.setBackgroundDrawable(talpha);
+		
+		
+		
+		
 	}
 
 	@Override
 	protected void refreshViews() {
-	//	info.setText("WAITING\nWAITING");
+
 
 	Log.d(tag, "_FDK_ RefreshView");
 	}
