@@ -32,7 +32,7 @@ import com.core.MainOverlayView;
 public class OverlayView extends MainOverlayView implements OnClickListener {
 
 	Button xbmc_button,video_button;
-	private TextView info;
+
 	private final static String tag = MainOverlayView.class.getSimpleName();
 	
 	public OverlayView(MainOverlayService service) {
@@ -45,11 +45,9 @@ public class OverlayView extends MainOverlayView implements OnClickListener {
 	
 	@Override
 	protected void onInflateView() {
-		info = (TextView) this.findViewById(R.id.fullscreen_content);
 		xbmc_button = (Button) findViewById(R.id.xbmc_button);
 		video_button = (Button) findViewById(R.id.video_button);
-		
-		info.setVisibility(View.VISIBLE);
+
 		xbmc_button.setVisibility(View.VISIBLE);
 		video_button.setVisibility(View.VISIBLE);
 

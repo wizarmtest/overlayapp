@@ -68,7 +68,7 @@ public abstract class MainOverlayView extends RelativeLayout {
 
 	private void setupLayoutParams() {
 		Log.d(tag, "_FDK_ setupLayoutPArms");
-		LinearLayout rl = (LinearLayout) findViewById(R.id.fullscreen_content_controls);
+	//	LinearLayout rl = (LinearLayout) findViewById(R.id.fullscreen_content_controls);
 	//	LinearLayout r2 = (LinearLayout) findViewById(R.id.fullscreen_content_controls_menu_box);
 		
 		AlphaAnimation alpha = new AlphaAnimation (0.5F, 1.0F);
@@ -86,7 +86,7 @@ public abstract class MainOverlayView extends RelativeLayout {
 
 		layoutParams.gravity = getLayoutGravity();
 		
-		rl.startAnimation(alpha);
+	//	rl.startAnimation(alpha);
 		
 		
 		onSetupLayoutParams();

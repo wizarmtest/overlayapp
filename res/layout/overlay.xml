@@ -1,110 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="0dp"
     android:keepScreenOn="true"
-    android:background="@drawable/overlay_back"
     android:padding="2dp" >
     
-
-
     <!--
          The primary full-screen view. This can be replaced with whatever view
          is needed to present your content, e.g. VideoView, SurfaceView,
          TextureView, etc.
     -->
 
-
-    <LinearLayout
+<LinearLayout
     android:id="@+id/fullscreen_content_controls_menu_box"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
     android:gravity="center"
-    android:layout_alignLeft="@+id/fullscreen_content_controls"
-    android:layout_alignRight="@+id/fullscreen_content_controls"
-    android:background="#ffffff"
-    android:orientation="horizontal">
+    android:horizontalSpacing="30dp"
+    android:orientation="horizontal"
+    android:padding="10dp" >
 
-	<TextView
-	    android:id="@+id/fullscreen_content"
-	    android:layout_width="match_parent"
-	    android:layout_height="match_parent"
-	    android:keepScreenOn="true"
-	    android:paddingBottom="2dp"
-	    android:paddingLeft="3dp"
-	    android:text="@string/dummy_content"
-	    android:textColor="#33b5e5"
-	    android:textSize="13sp"
-	    android:textStyle="bold" />
-
-	</LinearLayout>
-    <LinearLayout
-        android:id="@+id/fullscreen_content_controls"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/fullscreen_content_controls_menu_box"
-		android:layout_alignRight="@+id/fullscreen_content_controls_image"
-		android:layout_alignLeft="@+id/fullscreen_content_controls_image"
-        android:background="#ffffff"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:paddingTop="2dp" >
-        
     <Button
         android:id="@+id/xbmc_button"
-        style="?buttonBarButtonStyle"
-		android:keepScreenOn="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/iconskype"
+        android:keepScreenOn="true"
         android:text="@string/xbmc_button" />
+
+    <TextView
+        android:layout_width="30dip"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/video_button"
-        style="?buttonBarButtonStyle"
-		android:keepScreenOn="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/iconm"
+        android:keepScreenOn="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="6dip"
         android:text="@string/video_button" />
+
+    <TextView
+        android:layout_width="30dip"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/scale_button"
-        style="?buttonBarButtonStyle"
-		android:keepScreenOn="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/iconplay"
+        android:keepScreenOn="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="6dip"
         android:text="@string/scale_button" />
 
-    </LinearLayout>
+    <TextView
+        android:layout_width="30dip"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/scale_button2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/iconmail"
+        android:keepScreenOn="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="6dip"
+        android:text="@string/scale_button" />
+</LinearLayout>
 
 <LinearLayout
     android:id="@+id/fullscreen_content_controls_image"
-    android:layout_below="@+id/fullscreen_content_controls"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="10dp"
-    android:horizontalSpacing="30dp" 
-    android:orientation="horizontal">
+    android:layout_alignLeft="@+id/fullscreen_content_controls_menu_box"
+    android:layout_below="@+id/fullscreen_content_controls_menu_box"
+    android:layout_marginTop="37dp"
+    android:horizontalSpacing="30dp"
+    android:orientation="horizontal"
+    android:padding="10dp" >
 
     <Button
         android:id="@+id/video_button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_icon1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="left"
+        android:background="@drawable/iconchat"
         android:keepScreenOn="true"
-        android:padding="20dp"
-         />
-    
+        android:paddingLeft="6dip" />
+
+    <TextView
+        android:id="@+id/buttons_spacer_left"
+        android:layout_width="30dip"
+        android:layout_height="wrap_content" />
+
     <Button
         android:id="@+id/video_button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_icon2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="right"
+        android:background="@drawable/iconscale"
         android:keepScreenOn="true"
-        android:paddingLeft="20dp" />
+        android:paddingLeft="20dp"
+        android:paddingRight="6dip" />
 
+    <TextView
+        android:layout_width="30dip"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/video_button3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="right"
+        android:background="@drawable/iconradio"
+        android:keepScreenOn="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="6dip" />
+
+    <TextView
+        android:layout_width="30dip"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/video_button4"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="right"
+        android:background="@drawable/iconcloud"
+        android:keepScreenOn="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="6dip" />
 </LinearLayout>
-    
-    
 
 </RelativeLayout>
