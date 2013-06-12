@@ -63,7 +63,8 @@ public abstract class MainOverlayView extends RelativeLayout {
 	public int getLayoutGravity() {
 		// Override this to set a custom Gravity for the view.
 
-		return Gravity.CENTER;
+		return Gravity.CENTER|Gravity.FILL;
+		
 	}
 
 	private void setupLayoutParams() {
@@ -71,13 +72,13 @@ public abstract class MainOverlayView extends RelativeLayout {
 	//	LinearLayout rl = (LinearLayout) findViewById(R.id.fullscreen_content_controls);
 	//	LinearLayout r2 = (LinearLayout) findViewById(R.id.fullscreen_content_controls_menu_box);
 		
-		AlphaAnimation alpha = new AlphaAnimation (0.5F, 1.0F);
-		alpha.setDuration(0); // Make animation instant
-		alpha.setFillAfter(true);
+		//AlphaAnimation alpha = new AlphaAnimation (0.5F, 1.0F);
+		//alpha.setDuration(0); // Make animation instant
+		//alpha.setFillAfter(true);
 		
-		AlphaAnimation alpha2 = new AlphaAnimation (0.5F, 1.0F);
-		alpha2.setDuration(0); // Make animation instant
-		alpha2.setFillAfter(true);
+		//AlphaAnimation alpha2 = new AlphaAnimation (0.5F, 1.0F);
+		//alpha2.setDuration(0); // Make animation instant
+		//alpha2.setFillAfter(true);
 	//	r2.startAnimation(alpha2);
 
 		layoutParams = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT,

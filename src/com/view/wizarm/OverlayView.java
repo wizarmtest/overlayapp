@@ -62,9 +62,6 @@ public class OverlayView extends MainOverlayView implements OnClickListener {
 		//talpha.setAlpha(255);
 		//info.setBackgroundDrawable(talpha);
 		
-		
-		
-		
 	}
 
 	@Override
@@ -108,7 +105,9 @@ public class OverlayView extends MainOverlayView implements OnClickListener {
 	public void onClick(View view) {
    		 switch (view.getId()) {
     			case R.id.xbmc_button:
-     			 Log.d(tag, "onClick: starting srvice");
+     			 Log.d(tag, "onClick: starting srvice *******************************8'");
+     			 xbmc_button.setVisibility(View.GONE);
+     			 
     			 break;
 		    	case R.id.video_button:
      			 Log.d(tag, "onClick: stopping srvice");
