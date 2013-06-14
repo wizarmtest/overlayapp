@@ -1,21 +1,11 @@
 package com.view.wizarm;
 
-/*
-Copyright 2011 jawsware international
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
 import com.view.wizarm.R;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.Gravity;
@@ -29,9 +19,10 @@ import android.view.View;
 import com.core.MainOverlayService;
 import com.core.MainOverlayView;
 
-public class OverlayView extends MainOverlayView implements OnClickListener {
+public class OverlayView extends MainOverlayView  implements OnClickListener {
 
-	Button xbmc_button,video_button;
+	Button watch_button,xbmc_button,scalevideo_button;
+	public static SettingActivity instance;
 
 	private final static String tag = MainOverlayView.class.getSimpleName();
 	
@@ -45,18 +36,25 @@ public class OverlayView extends MainOverlayView implements OnClickListener {
 	
 	@Override
 	protected void onInflateView() {
-		xbmc_button = (Button) findViewById(R.id.xbmc_button);
-		video_button = (Button) findViewById(R.id.video_button);
-
-		xbmc_button.setVisibility(View.VISIBLE);
-		video_button.setVisibility(View.VISIBLE);
-
-		xbmc_button.setOnClickListener(this);
-		video_button.setOnClickListener(this);
 		
-		Drawable balpha = video_button.getBackground();
+		/* Full screen watch video */
+		watch_button = (Button) findViewById(R.id.watch_button);
+		watch_button.setVisibility(View.VISIBLE);
+		watch_button.setOnClickListener(this);
+
+		
+		
+	//	xbmc_button = (Button) findViewById(R.id.xbmc_button);
+		scalevideo_button = (Button) findViewById(R.id.scalevideo_button);
+		//xbmc_button.setVisibility(View.VISIBLE);
+		scalevideo_button.setVisibility(View.VISIBLE);
+
+		//xbmc_button.setOnClickListener(this);
+		scalevideo_button.setOnClickListener(this);
+		
+		Drawable balpha = scalevideo_button.getBackground();
 		balpha.setAlpha(255);
-		video_button.setBackgroundDrawable(balpha);
+		scalevideo_button.setBackgroundDrawable(balpha);
 		
 		//Drawable talpha = info.getBackground();
 		//talpha.setAlpha(255);
@@ -103,17 +101,34 @@ public class OverlayView extends MainOverlayView implements OnClickListener {
 
 
 	public void onClick(View view) {
+		//Intent intent = new Intent();
+		//intent.setClassName("com.android.settings", "com.android.settings");
+		//Intent LaunchIntent = getPackageManager().getLaunchIntentForPackage("com.android.settings");
+		
    		 switch (view.getId()) {
-    			case R.id.xbmc_button:
+    			case R.id.watch_button:
      			 Log.d(tag, "onClick: starting srvice *******************************8'");
-     			 xbmc_button.setVisibility(View.GONE);
+//     			 xbmc_button.setVisibility(View.GONE); make total view.GONE
+     			 super.setVisibility(View.GONE);
+
+     			instance = new SettingActivity();
+     			instance.onCreate(null);
+   
+     			
+     	//		startActivity(intent);
+    		//	startActivity(new Intent(Settings.ACTION_SETTINGS));
+     			 
      			 
     			 break;
-		    	case R.id.video_button:
+		    	case R.id.scalevideo_button:
+
+		    	
      			 Log.d(tag, "onClick: stopping srvice");
    			 break;
 			    }
 	  }
+
+
 	
 	
 }
