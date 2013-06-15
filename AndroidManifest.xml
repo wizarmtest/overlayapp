@@ -17,6 +17,8 @@
             android:name="OverlayShowActivity"
             android:theme="@android:style/Theme.Dialog" >
             <intent-filter >
+
+
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -29,6 +31,10 @@
         
        	<service android:name="OverlayService" >
         </service>
+        
+       	      <activity android:name="com.android.settings" >  
+            </activity>   
+       
             
     </application>
 

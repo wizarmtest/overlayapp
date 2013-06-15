@@ -20,8 +20,7 @@ public class OverlayService extends MainOverlayService {
 	public void onCreate() {
 		super.onCreate();
 		
-		
-		instance = this;
+		 instance = this;
 		
 		overlayView = new OverlayView(this);
 	}

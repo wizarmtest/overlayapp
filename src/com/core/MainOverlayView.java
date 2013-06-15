@@ -4,7 +4,9 @@ package com.core;
 
 import com.view.wizarm.R;
 import android.util.Log;
+import android.app.ActivityManager;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -294,5 +296,11 @@ public abstract class MainOverlayView extends RelativeLayout {
 		return super.onTouchEvent(event);
 
 	}
+
+    public void launchSettings() {
+
+    	getService().launchSettings();
+
+    }
 
 }

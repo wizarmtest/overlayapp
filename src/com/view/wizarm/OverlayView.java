@@ -110,10 +110,11 @@ public class OverlayView extends MainOverlayView  implements OnClickListener {
      			 Log.d(tag, "onClick: starting srvice *******************************8'");
 //     			 xbmc_button.setVisibility(View.GONE); make total view.GONE
      			 super.setVisibility(View.GONE);
+     			 super.launchSettings();
 
-     			instance = new SettingActivity();
-     			instance.onCreate(null);
-   
+     			//instance = new SettingActivity();
+     			//instance.launchSettings();
+    
      			
      	//		startActivity(intent);
     		//	startActivity(new Intent(Settings.ACTION_SETTINGS));
