@@ -56,26 +56,11 @@ public abstract class MainOverlayView extends RelativeLayout {
 
 	private void setupLayoutParams() {
 		Log.d(tag, "_FDK_ setupLayoutPArms");
-	//	LinearLayout rl = (LinearLayout) findViewById(R.id.fullscreen_content_controls);
-	//	LinearLayout r2 = (LinearLayout) findViewById(R.id.fullscreen_content_controls_menu_box);
-		
-		//AlphaAnimation alpha = new AlphaAnimation (0.5F, 1.0F);
-		//alpha.setDuration(0); // Make animation instant
-		//alpha.setFillAfter(true);
-		
-		//AlphaAnimation alpha2 = new AlphaAnimation (0.5F, 1.0F);
-		//alpha2.setDuration(0); // Make animation instant
-		//alpha2.setFillAfter(true);
-	//	r2.startAnimation(alpha2);
-
 		layoutParams = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT,
 				WindowManager.LayoutParams.TYPE_PHONE, WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
 						| WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH, PixelFormat.TRANSLUCENT);
 
 		layoutParams.gravity = getLayoutGravity();
-		
-	//	rl.startAnimation(alpha);
-		
 		
 		onSetupLayoutParams();
 
@@ -197,7 +182,6 @@ public abstract class MainOverlayView extends RelativeLayout {
 
 	protected void show() {
 		// Set visibility, but bypass onVisibilityToChange()
-
 		super.setVisibility(View.VISIBLE);
 	}
 
@@ -298,9 +282,11 @@ public abstract class MainOverlayView extends RelativeLayout {
 	}
 
     public void launchSettings() {
-
     	getService().launchSettings();
-
+    }
+    
+    public void launchBrowser() {
+    	getService().launchBrowser();
     }
 
 }

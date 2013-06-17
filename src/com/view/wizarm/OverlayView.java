@@ -21,7 +21,7 @@ import com.core.MainOverlayView;
 
 public class OverlayView extends MainOverlayView  implements OnClickListener {
 
-	Button watch_button,xbmc_button,scalevideo_button;
+	Button watch_button,xbmc_button,scalevideo_button,launchsetting_button,launchbrowser_button;
 	public static SettingActivity instance;
 
 	private final static String tag = MainOverlayView.class.getSimpleName();
@@ -41,16 +41,22 @@ public class OverlayView extends MainOverlayView  implements OnClickListener {
 		watch_button = (Button) findViewById(R.id.watch_button);
 		watch_button.setVisibility(View.VISIBLE);
 		watch_button.setOnClickListener(this);
+		
+		scalevideo_button = (Button) findViewById(R.id.scalevideo_button);
+		scalevideo_button.setVisibility(View.VISIBLE);
+		scalevideo_button.setOnClickListener(this);
 
+	    	launchsetting_button = (Button) findViewById(R.id.launchsetting_button);
+	    	launchsetting_button.setVisibility(View.VISIBLE);
+	    	launchsetting_button.setOnClickListener(this);
+	    
+	    	launchbrowser_button = (Button) findViewById(R.id.launchbrowser_button);
+	    	launchbrowser_button.setVisibility(View.VISIBLE);
+	 	launchbrowser_button.setOnClickListener(this);
 		
 		
 	//	xbmc_button = (Button) findViewById(R.id.xbmc_button);
-		scalevideo_button = (Button) findViewById(R.id.scalevideo_button);
-		//xbmc_button.setVisibility(View.VISIBLE);
-		scalevideo_button.setVisibility(View.VISIBLE);
 
-		//xbmc_button.setOnClickListener(this);
-		scalevideo_button.setOnClickListener(this);
 		
 		Drawable balpha = scalevideo_button.getBackground();
 		balpha.setAlpha(255);
@@ -105,27 +111,28 @@ public class OverlayView extends MainOverlayView  implements OnClickListener {
 		//intent.setClassName("com.android.settings", "com.android.settings");
 		//Intent LaunchIntent = getPackageManager().getLaunchIntentForPackage("com.android.settings");
 		
+     		Log.d(tag, "onClick: starting apps *******************************");
+
    		 switch (view.getId()) {
     			case R.id.watch_button:
-     			 Log.d(tag, "onClick: starting srvice *******************************8'");
-//     			 xbmc_button.setVisibility(View.GONE); make total view.GONE
      			 super.setVisibility(View.GONE);
-     			 super.launchSettings();
-
-     			//instance = new SettingActivity();
-     			//instance.launchSettings();
-    
-     			
-     	//		startActivity(intent);
-    		//	startActivity(new Intent(Settings.ACTION_SETTINGS));
-     			 
-     			 
     			 break;
+    			 
 		    	case R.id.scalevideo_button:
-
+			break;
+		    		
+		    	case R.id.launchsetting_button:
 		    	
-     			 Log.d(tag, "onClick: stopping srvice");
-   			 break;
+		    	super.setVisibility(View.GONE);
+	     		super.launchSettings();
+	     		break;
+	     		
+		    	case R.id.launchbrowser_button:
+		    	
+		    	super.setVisibility(View.GONE);
+		     	super.launchBrowser();
+		     	break;
+		     	
 			    }
 	  }
 
