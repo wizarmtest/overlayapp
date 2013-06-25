@@ -112,11 +112,7 @@ public class OverlayView extends MainOverlayView  implements OnClickListener {
 
 
 	public void onClick(View view) {
-		//Intent intent = new Intent();
-		//intent.setClassName("com.android.settings", "com.android.settings");
-		//Intent LaunchIntent = getPackageManager().getLaunchIntentForPackage("com.android.settings");
-		
-     		Log.d(tag, "onClick: starting apps *******************************");
+	Log.d(tag, "onClick: starting apps *******************************");
 
    		 switch (view.getId()) {
     			case R.id.watch_button:
@@ -128,15 +124,14 @@ public class OverlayView extends MainOverlayView  implements OnClickListener {
 		    	break;
 		    		
 		    	case R.id.launchsetting_button:
-		    	
 		    	super.setVisibility(View.GONE);
-	     		super.launchSettings();
+	     //		super.launchSettings();
 	     		break;
 	     		
 		    	case R.id.launchbrowser_button:
 		    	
 		    	super.setVisibility(View.GONE);
-		     	super.launchBrowser();
+		//     	super.launchBrowser();
 		     	break;
 		     	
 			    }

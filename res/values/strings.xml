@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">overlayapp</string>
+    <string name="app_name">Wizarm Launcher</string>
     <string name="dummy_content">Menu</string>
     <string name="xbmc_button">XBMC</string>
     <string name="video_button">View Direct video streaming</string>

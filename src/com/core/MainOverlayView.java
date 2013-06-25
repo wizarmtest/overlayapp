@@ -276,17 +276,9 @@ public abstract class MainOverlayView extends RelativeLayout {
 			onTouchEvent_Move(event);
 
 		}
-
 		return super.onTouchEvent(event);
 
 	}
 
-    public void launchSettings() {
-    	getService().launchSettings();
-    }
-    
-    public void launchBrowser() {
-    	getService().launchBrowser();
-    }
 
 }

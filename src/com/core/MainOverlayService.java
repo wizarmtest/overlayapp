@@ -59,15 +59,4 @@ public class MainOverlayService extends Service {
 	}
 	
 	
-	public void launchSettings() {
-		Intent LaunchIntent = getPackageManager().getLaunchIntentForPackage("com.android.settings");
-		startActivity(LaunchIntent);
-        }
-
-
-	public void launchBrowser() {
-		Intent LaunchIntent = getPackageManager().getLaunchIntentForPackage("com.android.browser");
-		startActivity(LaunchIntent);
-        }
-
 }
