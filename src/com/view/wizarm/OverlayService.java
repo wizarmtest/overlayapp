@@ -10,8 +10,10 @@ import android.content.Intent;
 
 public class OverlayService extends MainOverlayService {
 
-	public static OverlayService instance;
+	public static OverlayShowActivity parent;
 	public static OverlayShowActivity startActivity;
+	public static OverlayService instance;
+	Intent BroadcastIntent;
 	
 
 	private OverlayView overlayView;
@@ -19,12 +21,21 @@ public class OverlayService extends MainOverlayService {
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		
-		 instance = this;
+		instance=this;
+	//	parent=getActivity();
 		
 		overlayView = new OverlayView(this);
+		
+
+		BroadcastIntent = new Intent();
+		BroadcastIntent.setAction("view.wizarm.android.mybroadcast");
+	//	sendBroadcast(intent);	 
+
+
+
 	}
 
+	
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
@@ -63,4 +74,8 @@ public class OverlayService extends MainOverlayService {
 		return pending;
 	}
 
+	
+	public void launchOverlaySetting() {
+    	//startActivity(new Intent(this, QuickPrefsActivity.class));
+        }
 }

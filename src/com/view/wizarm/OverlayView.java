@@ -14,6 +14,9 @@ import android.widget.TextView;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.Window;
 
 
 import com.core.MainOverlayService;
@@ -22,12 +25,14 @@ import com.core.MainOverlayView;
 public class OverlayView extends MainOverlayView  implements OnClickListener {
 
 	Button watch_button,xbmc_button,scalevideo_button,launchsetting_button,launchbrowser_button;
-	public static SettingActivity instance;
+
+	public static OverlayService parentservice;
 
 	private final static String tag = MainOverlayView.class.getSimpleName();
 	
-	public OverlayView(MainOverlayService service) {
+	public OverlayView(OverlayService service) {		
 		super(service, R.layout.overlay, 1);
+		parentservice=service;
 	}
 
 	public int getGravity() {
@@ -119,7 +124,8 @@ public class OverlayView extends MainOverlayView  implements OnClickListener {
     			 break;
     			 
 		    	case R.id.scalevideo_button:
-			break;
+		    	parentservice.launchOverlaySetting();
+		    	break;
 		    		
 		    	case R.id.launchsetting_button:
 		    	
