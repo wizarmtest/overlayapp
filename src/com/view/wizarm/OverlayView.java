@@ -51,12 +51,12 @@ public class OverlayView extends MainOverlayView  implements OnClickListener {
 		scalevideo_button.setVisibility(View.VISIBLE);
 		scalevideo_button.setOnClickListener(this);
 
-	    	launchsetting_button = (Button) findViewById(R.id.launchsetting_button);
-	    	launchsetting_button.setVisibility(View.VISIBLE);
-	    	launchsetting_button.setOnClickListener(this);
+	    launchsetting_button = (Button) findViewById(R.id.launchsetting_button);
+	    launchsetting_button.setVisibility(View.VISIBLE);
+	    launchsetting_button.setOnClickListener(this);
 	    
-	    	launchbrowser_button = (Button) findViewById(R.id.launchbrowser_button);
-	    	launchbrowser_button.setVisibility(View.VISIBLE);
+	    launchbrowser_button = (Button) findViewById(R.id.launchbrowser_button);
+	    launchbrowser_button.setVisibility(View.VISIBLE);
 	 	launchbrowser_button.setOnClickListener(this);
 		
 		

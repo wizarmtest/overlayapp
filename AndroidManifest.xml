@@ -40,12 +40,6 @@
         
        	<service android:name="OverlayService" >
         </service>
-          
-        	<receiver android:name="myReceiver" >
-            <intent-filter>
-                <action android:name="view.wizarm.android.mybroadcast" />
-            </intent-filter>
-        </receiver>
             
     </application>
 

@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 public class OverlayShowActivity extends Activity {
 	
@@ -58,7 +59,8 @@ public class OverlayShowActivity extends Activity {
 		startService(new Intent(this, OverlayService.class));
 	
 		// Register broadcast receiver
-		IntentFilter intentFilter = new IntentFilter("view.wizarm.android.mybroadcast");
+		IntentFilter intentFilter = new IntentFilter();
+		intentFilter.addAction("view.wizarm.android.mybroadcast");
 		registerReceiver( myReceiver , intentFilter);
 }
 
@@ -66,17 +68,32 @@ public class OverlayShowActivity extends Activity {
 	private BroadcastReceiver myReceiver = new BroadcastReceiver() {
 	    @Override
 	    public void onReceive(Context context, Intent intent) {
-	    	Bundle extras = intent.getExtras();
-	    	
-		   if (extras != null){  
-		       {
-		    	 
-		    	rec_data = extras.getString("send_data");
-		        Log.d(" Received Msg : ",rec_data);
+	    	int activity_number;
+	  //  	Toast.makeText(getApplicationContext(), "%%%%%%%%%%%%received", Toast.LENGTH_SHORT).show();
+
+	    	//Bundle extras = intent.getExtras();
+
+	//	   if (extras != null){  
+	    		intent.getAction().equals("view.wizarm.android.mybroadcast");
+	    		
+	    		activity_number=intent.getIntExtra("activity_number", 0);
+	    		
+	    		switch (activity_number){
+	    		case 100:
+	    		launchSettings();
+	    		}
+		 //   	rec_data = extras.getString("send_data");
+		    //    Log.d("com.view.wizarm Received Msg : ",rec_data);
+		      //  Log.d("com.view.wizarm Received Msg : ",rec_data);		        
+		       // Log.d(" com.view.wizarm Received Msg : ",rec_data);		        
+		       // Log.d("com.view.wizarm Received Msg : ",rec_data);		       
+		       // Log.d("com.view.wizarm Received Msg : ",rec_data);
 		        
-		        launchSettings();
-		        }
-		    }
+		       
+		        
+		  //      launchSettings();
+		  //      }
+		  //  }
 
 	    }
 	};

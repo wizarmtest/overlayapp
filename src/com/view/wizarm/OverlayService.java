@@ -6,8 +6,10 @@ import com.view.wizarm.R;
 import com.core.MainOverlayService;
 import android.app.Notification;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 public class OverlayService extends MainOverlayService {
 
@@ -30,9 +32,16 @@ public class OverlayService extends MainOverlayService {
 		
 		overlayView = new OverlayView(this);
 		
-
+		Context context = getApplicationContext();
+	//	BroadcastIntent = new Intent( context,  this.getClass());
 		BroadcastIntent = new Intent();
 		BroadcastIntent.setAction("view.wizarm.android.mybroadcast");
+
+	//	BroadcastIntent.setAction("view.wizarm.android.mybroadcast");
+		//extras = BroadcastIntent.getExtras();
+	   // if ( extras == null ){
+	     //   Log.e("extras", "Extra NULL");
+	    //}
 	//	sendBroadcast(intent);	 
 
 	}
@@ -78,9 +87,13 @@ public class OverlayService extends MainOverlayService {
 
 	
 	public void launchOverlaySetting() {
-		extras.putString("send_data", "Setting");
-		BroadcastIntent.putExtras(extras);  
+		Log.e("extras", "Extra Before sent");
+		BroadcastIntent.putExtra("activity_number", 100);
 		sendBroadcast(BroadcastIntent);
+		Log.e("extras", "Extra SentBroadcast");
+		//extras.putString("send_data", "Setting");
+		//BroadcastIntent.putExtras(extras);
+		//sendBroadcast(BroadcastIntent);
     	//startActivity(new Intent(this, QuickPrefsActivity.class));
         }
 }
